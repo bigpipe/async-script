@@ -1,0 +1,36 @@
+{
+  "name": "async-script",
+  "version": "0.0.0",
+  "description": "Asyncly load a script",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js",
+    "watch": "mocha --watch test.js",
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bigpipe/async-script"
+  },
+  "keywords": [
+    "script",
+    "loading",
+    "async",
+    "floppy",
+    "loader",
+    "scripts"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bigpipe/async-script/issues"
+  },
+  "devDependencies": {
+    "assume": "0.0.x",
+    "istanbul": "0.3.x",
+    "mocha": "2.1.x",
+    "pre-commit": "0.0.x"
+  },
+  "homepage": "https://github.com/bigpipe/async-script"
+}
