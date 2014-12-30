@@ -1,5 +1,7 @@
 'use strict';
 
+var one = require('one-time');
+
 /**
  * Async load a script file.
  *
@@ -9,6 +11,8 @@
  * @api public
  */
 module.exports = function scripts(document, url, fn) {
+  fn = one(fn);
+
   var script = document.createElement('script');
 
   /**
@@ -17,6 +21,8 @@ module.exports = function scripts(document, url, fn) {
    * @api private
    */
   function unload() {
+    fn(new Error('The script has been removed.'));
+
     if (!script) return;
     if (script.parentNode) script.parentNode.removeChild(script);
     script = script.onerror = script.onload = script.onreadystatechange = null;
@@ -35,8 +41,8 @@ module.exports = function scripts(document, url, fn) {
   // or not, we still want to listen for it.
   //
   script.onerror = function onerror() {
-    unload();
     fn(new Error('Failed to load the script.'));
+    unload();
   };
 
   //
@@ -45,8 +51,8 @@ module.exports = function scripts(document, url, fn) {
   // onreadystatechange method for completion indication.
   //
   script.onload = function onload() {
-    unload();
     fn();
+    unload();
   };
 
   //
@@ -56,8 +62,8 @@ module.exports = function scripts(document, url, fn) {
   //
   script.onreadystatechange = function onreadystatechange() {
     if (this.readyState in { loaded: 1, complete: 1 }) {
-      unload();
       fn();
+      unload();
     }
   };
 

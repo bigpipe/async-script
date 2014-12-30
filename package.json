@@ -32,5 +32,8 @@
     "mocha": "2.1.x",
     "pre-commit": "0.0.x"
   },
-  "homepage": "https://github.com/bigpipe/async-script"
+  "homepage": "https://github.com/bigpipe/async-script",
+  "dependencies": {
+    "one-time": "0.0.x"
+  }
 }
