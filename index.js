@@ -67,4 +67,6 @@ module.exports = function scripts(document, url, fn) {
   //
   (document.head || document.body).appendChild(script);
   script.src = url;
+
+  return unload;
 };
