@@ -27,11 +27,11 @@
     "url": "https://github.com/bigpipe/async-script/issues"
   },
   "devDependencies": {
-    "assume": "0.0.x",
-    "istanbul": "0.3.x",
-    "mocha": "2.1.x",
-    "mochify": "2.1.x",
-    "pre-commit": "0.0.x"
+    "assume": "~1.4.1",
+    "istanbul": "~0.4.5",
+    "mocha": "~3.1.2",
+    "mochify": "~2.18.1",
+    "pre-commit": "~1.1.3"
   },
   "homepage": "https://github.com/bigpipe/async-script",
   "dependencies": {
